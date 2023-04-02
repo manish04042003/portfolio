@@ -816,6 +816,9 @@ text-align: center;
 }
 
 /*==================== TESTIMONIAL ====================*/
+.testimonial{
+  display: none !important;
+}
 .testimonial__data,
 .testimonial__header{
   display: flex;
