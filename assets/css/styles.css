@@ -347,7 +347,11 @@ img {
   border-radius: .5rem;
   font-weight: var(--font-medium);
 }
-
+.contact__form button{
+  border: none;
+  background-color: transparent;
+  color: white;
+}
 .button:hover{
   background-color: var(--first-color-alt);
 }

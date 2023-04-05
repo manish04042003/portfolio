@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Passionate Full Stack developer specialize in building responsive web applications using HTML5, CSS3, JavaScript, and React">
+    <meta name="description"
+        content="Passionate Full Stack developer specialize in building responsive web applications using HTML5, CSS3, JavaScript, and React">
     <meta name="keywords" content="Manish kumar,Web Developer,Frontend Developer,rajdhani college, react ">
     <meta name="author" content="Manish kumar">
 
@@ -820,34 +821,36 @@
                     </div>
                 </div>
 
-                <form action="" class="contact__form grid">
+                <form action="" id="Contact_form" class="contact__form grid">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
                             <label for="" class="contact__label">Name *</label>
-                            <input type="text" required  class="contact__input">
+                            <input type="text" required name="name" class="contact__input">
                         </div>
                         <div class="contact__content">
                             <label for="" class="contact__label">Email *</label>
-                            <input type="emal" required  class="contact__input">
+                            <input type="emal" required name="email" class="contact__input">
                         </div>
                         <div class="contact__content">
                             <label for="" class="contact__label">Project *</label>
-                            <input type="text"  required class="contact__input">
+                            <input type="text" required name="project" class="contact__input">
                         </div>
                         <div class="contact__content">
                             <label for="" class="contact__label">Contact Number</label>
-                            <input type="number" maxlength="10" class="contact__input">
+                            <input type="number" maxlength="10" name="phone" class="contact__input">
                         </div>
                         <div class="contact__content">
-                            <label for="" required  class="contact__label">Message *</label>
-                            <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                            <label for="" required class="contact__label">Message *</label>
+                            <textarea name="message" id="" cols="0" rows="7" class="contact__input"></textarea>
                         </div>
 
                         <div>
-                            <a href="#" class="button button--flex">
-                                Send Message
-                                <i class="uil uil-message button__icon"></i>
-                            </a>
+                            <button type="submit">
+                                <a href="" class="button button--flex">
+                                    Send Message
+                                    <i class="uil uil-message button__icon"></i>
+                                </a>
+                            </button>
                         </div>
                     </div>
                 </form>
