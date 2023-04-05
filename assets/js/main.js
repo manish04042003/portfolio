@@ -211,12 +211,18 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(form); // get the form data
   const name = formData.get("name"); // get the value of the 'name' field
   const email = formData.get("email"); // get the value of the 'email' field
-  const phone = formData.get("phone")
-  const project = formData.get("project")
-  const message = formData.get('message')
+  const phone = formData.get("phone");
+  const project = formData.get("project");
+  const message = formData.get("message");
   console.log(`Name: ${name}\nEmail: ${email}`); // display the form da
   const url = "http://localhost:4444/sendEmail"; // the URL of the API endpoint
-  const data = { name: name, email: email, phone: phone,project : project,message : message }; // the data to send
+  const data = {
+    name: name,
+    email: email,
+    phone: phone,
+    project: project,
+    message: message,
+  }; // the data to send
 
   fetch(url, {
     method: "POST",
@@ -226,6 +232,25 @@ form.addEventListener("submit", (event) => {
     body: JSON.stringify(data),
   })
     .then((response) => response.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+    //   console.log(data);
+      if(data.massage=='success'){
+        new Noty({
+            type: "success",
+            theme: "relax",
+            layout: "topRight",
+            text: 'Form submit, i will get back to you ',
+            timeout: 1500,
+          }).show();
+      }else{
+        new Noty({
+            type: "error",
+            theme: "relax",
+            layout: "topRight",
+            text: 'somthing wrong happen please try again',
+            timeout: 1500,
+          }).show();
+      }
+    })
     .catch((error) => console.error(error));
 });
