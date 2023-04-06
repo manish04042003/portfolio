@@ -215,7 +215,7 @@ form.addEventListener("submit", (event) => {
   const project = formData.get("project");
   const message = formData.get("message");
   console.log(`Name: ${name}\nEmail: ${email}`); // display the form da
-  const url = "http://localhost:4444/sendEmail"; // the URL of the API endpoint
+  const url = "https://portfolio-83dt.onrender.com/sendEmail"; // the URL of the API endpoint
   const data = {
     name: name,
     email: email,
