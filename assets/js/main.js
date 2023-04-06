@@ -207,7 +207,9 @@ themeButton.addEventListener("click", () => {
 const form = document.getElementById("Contact_form");
 
 form.addEventListener("submit", (event) => {
+  
   event.preventDefault();
+  form.reset();
   const formData = new FormData(form); // get the form data
   const name = formData.get("name"); // get the value of the 'name' field
   const email = formData.get("email"); // get the value of the 'email' field
@@ -239,7 +241,7 @@ form.addEventListener("submit", (event) => {
             type: "success",
             theme: "relax",
             layout: "topRight",
-            text: 'Form submit, i will get back to you ',
+            text: 'I will contact you soon',
             timeout: 1500,
           }).show();
       }else{
@@ -247,7 +249,7 @@ form.addEventListener("submit", (event) => {
             type: "error",
             theme: "relax",
             layout: "topRight",
-            text: 'somthing wrong happen please try again',
+            text: 'Somthing wrong happen please try again',
             timeout: 1500,
           }).show();
       }
