@@ -233,7 +233,6 @@ form.addEventListener("submit", (event) => {
     project: project,
     message: message,
   }; // the data to send
-  form.reset();
 
   fetch(url, {
     method: "POST",
@@ -245,6 +244,7 @@ form.addEventListener("submit", (event) => {
     .then((response) => response.json())
     .then((data) => {
       //   console.log(data);
+  form.reset();
       if (data.massage == "success") {
         new Noty({
           type: "success",
