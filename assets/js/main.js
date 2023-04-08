@@ -203,11 +203,20 @@ themeButton.addEventListener("click", () => {
 });
 
 // Form submit
+function showLoder() {
+  document.getElementById("SubmitLoder").style.display = "block";
+  document.getElementById('btncontent').style.display = 'none'
+}
+function hideLoder() {
+  document.getElementById("SubmitLoder").style.display = "none";
+  document.getElementById('btncontent').style.display = 'flex'
 
+}
 const form = document.getElementById("Contact_form");
 
 form.addEventListener("submit", (event) => {
-  
+  showLoder();
+
   event.preventDefault();
   const formData = new FormData(form); // get the form data
   const name = formData.get("name"); // get the value of the 'name' field
@@ -235,24 +244,36 @@ form.addEventListener("submit", (event) => {
   })
     .then((response) => response.json())
     .then((data) => {
-    //   console.log(data);
-      if(data.massage=='success'){
+      //   console.log(data);
+      if (data.massage == "success") {
         new Noty({
-            type: "success",
-            theme: "relax",
-            layout: "topRight",
-            text: 'I will contact you soon',
-            timeout: 1500,
-          }).show();
-      }else{
+          type: "success",
+          theme: "relax",
+          layout: "topRight",
+          text: "I will contact you soon",
+          timeout: 1500,
+        }).show();
+      } else {
         new Noty({
-            type: "error",
-            theme: "relax",
-            layout: "topRight",
-            text: 'Somthing wrong happen please try again',
-            timeout: 1500,
-          }).show();
+          type: "error",
+          theme: "relax",
+          layout: "topRight",
+          text: "Somthing wrong happen please try again",
+          timeout: 1500,
+        }).show();
       }
+      hideLoder();
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {
+      hideLoder();
+      console.error(error);
+      new Noty({
+        type: "error",
+        theme: "relax",
+        layout: "topRight",
+        text: "Somthing wrong happen please try again",
+        timeout: 1500,
+      }).show();
+      
+    });
 });
