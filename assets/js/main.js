@@ -209,7 +209,6 @@ const form = document.getElementById("Contact_form");
 form.addEventListener("submit", (event) => {
   
   event.preventDefault();
-  form.reset();
   const formData = new FormData(form); // get the form data
   const name = formData.get("name"); // get the value of the 'name' field
   const email = formData.get("email"); // get the value of the 'email' field
@@ -225,6 +224,7 @@ form.addEventListener("submit", (event) => {
     project: project,
     message: message,
   }; // the data to send
+  form.reset();
 
   fetch(url, {
     method: "POST",
