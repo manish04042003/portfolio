@@ -347,6 +347,7 @@ img {
   border-radius: .5rem;
   font-weight: var(--font-medium);
   border: none;
+  cursor: pointer;
 }
 /* .contact__form button{
   border: none;
