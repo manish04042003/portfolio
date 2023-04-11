@@ -244,6 +244,7 @@ form.addEventListener("submit", (event) => {
     .then((response) => response.json())
     .then((data) => {
       //   console.log(data);
+      hideLoder();
   form.reset();
       if (data.massage == "success") {
         new Noty({
@@ -262,7 +263,7 @@ form.addEventListener("submit", (event) => {
           timeout: 1500,
         }).show();
       }
-      hideLoder();
+     
     })
     .catch((error) => {
       hideLoder();
