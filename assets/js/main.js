@@ -296,3 +296,14 @@ function topFunction() {
     document.getElementById('lodar').style.display = 'none'
   }, 1000);
 }
+
+
+function showDounloading(){
+  new Noty({
+    type: "success",
+    theme: "relax",
+    layout: "topRight",
+    text: "Downloading...",
+    timeout: 1500,
+  }).show();
+}
