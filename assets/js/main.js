@@ -278,3 +278,18 @@ form.addEventListener("submit", (event) => {
       
     });
 });
+
+
+
+
+setTimeout(() => {
+  console.log("This code will run after a delay");
+  document.getElementById('lodar').style.opacity = 0
+  
+  topFunction();
+}, 2000);
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
