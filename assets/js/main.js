@@ -201,6 +201,9 @@ themeButton.addEventListener("click", () => {
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
+  mixpanel.track('theme', {
+    'chanage': 'yes'
+  })
 });
 
 // Form submit
@@ -308,3 +311,9 @@ function showDounloading(){
     timeout: 1500,
   }).show();
 }
+
+
+
+
+// mixpanel js 
+mixpanel.init('066698d7c8ddce8f094caaa22d8cd1f6', { debug: true, track_pageview: true, persistence: 'localStorage' });
